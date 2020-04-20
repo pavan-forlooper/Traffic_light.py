@@ -1,0 +1,67 @@
+" program for stoplight "
+
+import turtle
+import time
+
+wn=turtle.Screen()
+wn.title("stoplight project")
+wn.bgcolor("white")
+
+
+#box around stoplight
+
+pen=turtle.Turtle()
+pen.color("blue")
+pen.width(3)
+pen.hideturtle()
+pen.penup()
+pen.goto(-30,60)
+pen.pendown()
+pen.fd(60)
+pen.rt(90)
+pen.fd(120)
+pen.rt(90)
+pen.fd(60)
+pen.rt(90)
+pen.fd(120)
+
+
+#red light
+redlight=turtle.Turtle()
+redlight.shape("circle")
+redlight.color("grey")
+redlight.penup()
+redlight.goto(0,40)
+
+#yellow light
+yellowlight=turtle.Turtle()
+yellowlight.shape("circle")
+yellowlight.color("grey")
+yellowlight.penup()
+yellowlight.goto(0,0)
+
+#green light
+greenlight=turtle.Turtle()
+greenlight.shape("circle")
+greenlight.color("grey")
+greenlight.penup()
+greenlight.goto(0,-40)
+
+while True: 
+    yellowlight.color("grey")
+    redlight.color("red")
+    time.sleep(5)
+
+    redlight.color("grey")
+    yellowlight.color("yellow")
+    time.sleep(3)
+
+    yellowlight.color("grey")
+    greenlight.color("green")
+    time.sleep(5)
+
+    greenlight.color("grey")
+    yellowlight.color("yellow")
+    time.sleep(3)
+
+wn.mainloop()
